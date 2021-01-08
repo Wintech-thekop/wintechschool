@@ -1,13 +1,10 @@
-﻿import io
-from os.path import abspath, dirname, join
-from setuptools import find_packages, setup
+﻿from distutils.core import setup
 
-
-HERE = dirname(abspath(__file__))
-LOAD_TEXT = lambda name: io.open(join(HERE, name), encoding='UTF-8').read()
-DESCRIPTION = '\n\n'.join(LOAD_TEXT(_) for _ in [
-    'README.rst'
-])
+try:
+  with open("README.md","r") as fh:
+    long_description = fh.read()
+except:
+  long_description = 'OOP Learning Example by Wintech Thekop'
 
 setup(
   name = 'wintechschool',         # How you named your package folder (MyLib)
